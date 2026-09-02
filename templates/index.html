@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de CO2 - Electricidad</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Calculadora de CO2 por electricidad</h1>
+    <p class="subtitulo">Ingresa tu consumo mensual en kWh (lo encuentras en tu planilla de luz).</p>
+
+    <form method="POST">
+      <label for="kwh">Consumo (kWh)</label>
+      <input type="number" step="any" min="0" name="kwh" id="kwh"
+             value="{{ kwh if kwh is not none else '' }}" placeholder="Ej: 150" required>
+      <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+    <div class="resultado">
+      <span class="resultado-label">Emisiones estimadas</span>
+      <span class="resultado-valor">{{ resultado }} kg CO2</span>
+    </div>
+    {% endif %}
+
+    <p class="nota">Factor usado: 0.19 kg CO2 por kWh (promedio del sistema eléctrico de Ecuador).</p>
+  </div>
+</body>
+</html>
