@@ -6,13 +6,15 @@ Descripción breve de qué hace el proyecto y cuál es su objetivo.
     Python
     Librerías utilizadas
     Framework utilizado
-    Base de datos, si aplica
+    Multimedia
+    html
+    css
 
 3. Requisitos previos
 
-    Python 3.x
-    Git
-    Otras herramientas necesarias
+    Python 3.12.8
+    Git gub
+    entorno virtual
 
 4. Instalación
 
