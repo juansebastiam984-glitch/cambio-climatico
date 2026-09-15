@@ -1,59 +1,83 @@
-1. Descripción
+# Calculadora de Huella de Carbono
 
-Descripción breve de qué hace el proyecto y cuál es su objetivo.
-2. Tecnologías utilizadas
+Proyecto de grado sobre cambio climático: una calculadora web que estima las emisiones de CO2 generadas por el consumo de electricidad y agua en el hogar, junto con consejos para reducirlas.
 
-    Python
-    Librerías utilizadas
-    Framework utilizado
-    Multimedia
-    html
-    css
+## Tecnologías
 
-3. Requisitos previos
+- Python 3
+- Flask
+- HTML / CSS
+- Jinja2 (motor de plantillas de Flask)
 
-    Python 3.12.8
-    Git gub
-    entorno virtual
+## Instalación
 
-4. Instalación
+1. Clona el repositorio:
+```
+git clone https://github.com/juansebastiam984-glitch/cambio-climatico
+```
 
-Explicar los pasos para instalar y configurar el proyecto.
+2. Entra a la carpeta del proyecto:
+```
+cd cambio-climatico
+```
 
-git clone URL_DEL_REPOSITORIO
-cd NOMBRE_DEL_PROYECTO
+3. Crea un entorno virtual:
+```
+python -m venv venv
+```
 
-5. Configuración
+4. Actívalo:
 
-Explicar las variables de entorno, archivos .env y demás configuraciones necesarias.
-6. Estructura del proyecto
+En Windows (PowerShell):
+```
+.\venv\Scripts\Activate.ps1
+```
 
-proyecto/
-├── src/
-├── tests/
+En Mac/Linux:
+```
+source venv/bin/activate
+```
+
+5. Instala las dependencias:
+```
+pip install -r requirements.txt
+```
+
+## Uso
+
+Con el entorno virtual activado, corre:
+```
+python app.py
+```
+
+Luego abre tu navegador en:
+```
+http://127.0.0.1:5000
+```
+
+## Estructura del proyecto
+
+```
+cambio-climatico/
+├── app.py                  # Rutas de Flask
+├── calculos.py               # Lógica de cálculo de emisiones y consejos
 ├── requirements.txt
-├── .env.example
-├── main.py
-└── README.md
+├── templates/
+│   ├── home.html             # Página de inicio
+│   ├── index.html            # Formulario de la calculadora
+│   └── consejos.html          # Consejos para reducir emisiones
+└── static/
+    ├── css/
+    │   └── style.css
+    └── img/
+        └── 1.png
+```
 
-7. Uso y ejecución
+## Factores de emisión usados
 
-Explicar cómo ejecutar el proyecto.
+- Electricidad: 0.19 kg CO2/kWh (Ecuador, CENACE/ARCONEL)
+- Agua: 0.28 kg CO2/m³ (referencia EMASESA, ciclo integral del agua)
 
-python main.py
+## Autor
 
-8. Pruebas
-
-Explicar cómo ejecutar las pruebas.
-
-pytest
-
-9. Contribución
-
-Explicar cómo pueden contribuir otros desarrolladores al proyecto.
-10. Licencia
-
-Indicar la licencia utilizada por el proyecto.
-
-
-
+Heo_787
