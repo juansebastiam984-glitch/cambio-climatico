@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Calculadora de CO2</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="pagina-inicio">
+
+  <nav class="navbar">
+    <div class="logo">CO2</div>
+    <h1 class="navbar-titulo">Calculadora de Huella de Carbono</h1>
+    <div class="navbar-botones">
+      <a href="{{ url_for('calculadora') }}" class="boton-nav-img">
+        <img src="{{ url_for('static', filename='img/1.png') }}" alt="">
+      </a>
+      <a href="{{ url_for('consejos') }}" class="boton-nav">Tips</a>
+    </div>
+  </nav>
+
+  <div class="contenido-inicio">
+    <h2>Descubre cuánto CO2 generan tus actividades diarias</h2>
+    <p>Ingresa tu consumo de luz y agua y obtén una estimación de tu huella de carbono, junto con consejos para reducirla.</p>
+    <a href="{{ url_for('calculadora') }}" class="boton-principal">Ir a la calculadora</a>
+
+    <div class="video-consejos">
+      <h3>Mira este video con consejos para reducir tu huella de carbono</h3>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/s46dXt8-UV8"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

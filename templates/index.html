@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de CO2</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Calculadora de CO2</h1>
+    <p class="subtitulo">Ingresa tus consumos mensuales de luz y agua.</p>
+
+    <form method="POST">
+      <label for="kwh">Electricidad (kWh)</label>
+      <input type="number" step="any" min="0" name="kwh" id="kwh"
+             value="{{ kwh if kwh is not none else '' }}" placeholder="Ej: 150">
+
+      <label for="m3agua">Agua (m³)</label>
+      <input type="number" step="any" min="0" name="m3agua" id="m3agua"
+             value="{{ m3agua if m3agua is not none else '' }}" placeholder="Ej: 12">
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado_luz is not none %}
+    <div class="resultado">
+      <span class="resultado-label">Emisiones por electricidad</span>
+      <span class="resultado-valor">{{ resultado_luz }} kg CO2</span>
+    </div>
+    {% endif %}
+
+    {% if resultado_agua is not none %}
+    <div class="resultado">
+      <span class="resultado-label">Emisiones por agua</span>
+      <span class="resultado-valor">{{ resultado_agua }} kg CO2</span>
+    </div>
+    {% endif %}
+
+    <p class="nota">Factores usados: 0.19 kg CO2/kWh (electricidad) y 0.28 kg CO2/m³ (agua).</p>
+  </div>
+</body>
+</html>

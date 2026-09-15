@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consejos - Calculadora de CO2</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="pagina-inicio">
+
+  <nav class="navbar">
+    <div class="logo">CO2</div>
+    <h1 class="navbar-titulo">Consejos para reducir tu huella</h1>
+    <a href="{{ url_for('home') }}" class="boton-nav">Inicio</a>
+  </nav>
+
+  <div class="contenido-consejos">
+    <section class="tarjeta-consejos">
+      <h2>💡 Electricidad</h2>
+      <ul>
+        {% for tip in tips_luz %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="tarjeta-consejos">
+      <h2>💧 Agua</h2>
+      <ul>
+        {% for tip in tips_agua %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>
